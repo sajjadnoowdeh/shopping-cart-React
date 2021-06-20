@@ -1,0 +1,30 @@
+.card-img{
+    width: 18rem;
+  }
+  .card-img img{
+    width: 100%;
+  }
+  
+  .section-products{
+    display: flex;
+      flex-direction: column;
+  }
+  .product-row1,.product-row2{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+   
+  }
+  .product-item{
+    padding: 1rem 0;
+  }
+  .footer-card{
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  button{
+    background-color: #f0c040;
+    border: 1px solid rgb(197, 187, 187);
+    padding: 0.5rem 1rem;
+  }
