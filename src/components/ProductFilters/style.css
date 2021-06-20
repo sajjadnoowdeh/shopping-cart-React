@@ -1,0 +1,17 @@
+.left-shop{
+  width: 76%;
+  }
+  .filters{
+    width: 100%;
+    display: flex;
+    display: flex;
+    justify-content: space-between;
+  }
+  .section-filterCard{
+    width: 100%;
+    padding-left: 1rem;
+    border-bottom: 1px solid #0000002e;
+    padding: 1rem;
+  }
+  
+  
