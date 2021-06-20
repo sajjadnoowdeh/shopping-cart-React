@@ -1,0 +1,9 @@
+header{
+    grid-area: header;
+    background-color: #203040;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    padding: .5rem;
+  }
+  
