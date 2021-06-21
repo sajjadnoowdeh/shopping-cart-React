@@ -1,26 +1,32 @@
 import React from "react";
 import "./style.css"
-export default function ProductFilters() {
+export default function ProductFilters({filters ={size:null,price:null},setFilters,resultCount = 0}) {
+  const hundleChange = (e) =>{
+        setFilters({...filters,[e.target.name]:e.target.value})
+  
+  }
   return (
     <div className="filters">
-      <div className="product-count">6 Productds</div>
+      <div className="product-count">{resultCount} Productds</div>
       <div className="product-order">
-        <label htmlFor="order">Order</label>
-        <select id="order">
-          <option value="Latest">Latest</option>
-          <option value="Lowest">Lowest</option>
-          <option value="Highest">Highest</option>
+        <label htmlFor="price">Price</label>
+        <select name={'price'} onChange={hundleChange} id="price">
+          <option value="">Latest</option>
+          <option value="-1">Lowest</option>
+          <option value="1">Highest</option>
         </select>
+     
       </div>
       <div className="product-filter">
-        <label htmlFor="Filter">Filter</label>
-        <select id="Filter">
-          <option value="All">All</option>
-          <option value="Xs">Xs</option>
-          <option value="S">M</option>
+        <label htmlFor="size">Size</label>
+        <select name={'size'} onChange={hundleChange} id="size">
+          <option value="">All</option>
+          <option value="XS">XS</option>
+          <option value="S">S</option>
+          <option value="M">M</option>
           <option value="L">L</option>
           <option value="XL">XL</option>
-          <option value="XXL">L</option>
+          <option value="XXL">XXL</option>
         </select>
       </div>
     </div>

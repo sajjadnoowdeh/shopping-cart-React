@@ -1,6 +1,6 @@
 import React from "react";
 import "./style.css";
-function ProductCard({srcImg='',title = '',price = 0}) {
+function ProductCard({srcImg='',title = '',price = 0,onClick}) {
   return (
     <div className="card-product">
       <div className="card-img">
@@ -12,8 +12,8 @@ function ProductCard({srcImg='',title = '',price = 0}) {
         <a href="#">{title}</a>
       </p>
       <div className="footer-card">
-        <p>{price}</p>
-        <button>Add To Cart</button>
+        <p>${price}</p>
+        <button onClick={onClick}>Add To Cart</button>
       </div>
     </div>
   );

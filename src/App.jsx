@@ -1,47 +1,32 @@
+import {useState,useEffect} from 'react';
+import "./App.css";
 import React from 'react'
 import ProductCard from './components/ProductCard/ProductCard';
 import ProductFilters from './components/ProductFilters/ProductFilters';
 import Header from './components/Header/Header';
-import "./App.css";
+import {productList} from './data/data';
+
 function App() {
-    const productList = [
-        {
-            id:1,
-            srcImg:"https://react-shopping-cart-seven-lovat.vercel.app/images/dress1.jpg",
-            title:"cami maxi dress in polka dot",
-            price:"$29.9"
-       },
-       {
-            id:2,
-            srcImg:"https://react-shopping-cart-seven-lovat.vercel.app/images/dress2.jpg",
-            title:"Midi sundress with ruched front",
-            price:"$18.9"
-       },
-       {
-            id:3,
-            srcImg:"https://react-shopping-cart-seven-lovat.vercel.app/images/dress3.jpg",
-            title:"Midi dress in pink ditsy floral",
-            price:"$14.9"
-       },
-       {
-            id:4,
-            srcImg:"https://react-shopping-cart-seven-lovat.vercel.app/images/dress4.jpg",
-            title:"cami maxi dress in polka dot",
-            price:"$25.9"
-       },
-       {
-            id:5,
-            srcImg:"https://react-shopping-cart-seven-lovat.vercel.app/images/dress5.jpg",
-            title:"Frill mini dress in yellow polka dot",
-            price:"$10.9"
-       },
-       {
-            id:6,
-            srcImg:"https://react-shopping-cart-seven-lovat.vercel.app/images/dress6.jpg",
-            title:"Midi tea dress in blue and red spot",
-            price:"$49.9"
-       }
-    ]
+     const [filters,setFilters]  = useState({price:null,size:null})
+     const [filteredProductList,setFilteredProductList] = useState(productList);
+     useEffect(()=>{
+        if (filters.size) {
+            setFilteredProductList(productList.filter((item)=>item.size === filters.size))
+        }else{
+         
+            setFilteredProductList(productList)
+        }
+     },[filters.size])
+     useEffect(()=>{
+        if (filters.price === "-1") {
+            setFilteredProductList(filteredProductList.sort((a,b)=> b.price - a.price))
+        }else if(filters.price === "1"){
+         
+            setFilteredProductList(filteredProductList.sort((a,b)=> a.price - b.price))
+        }else{
+            setFilteredProductList(filteredProductList.sort((a,b)=> a.id - b.id))
+        }
+     },[filters.price])
     return (
         <div>
            <Header />
@@ -49,17 +34,18 @@ function App() {
                        
             <div className={"left-shop"}>
                  <section className={"section-filterCard"}>
-                      <ProductFilters/>
+                      <ProductFilters filters={filters} setFilters={setFilters} resultCount={filteredProductList.length}/>
                 </section>
                  <section className={"section-products"}>
                     <div className={"product-row1"}>
                             {
-                                productList.map((product) =>(
+                                filteredProductList.map((product) =>(
                                     <div key={product.id} className={"product-item"}>
                                         <ProductCard 
                                             srcImg={product.srcImg}
                                             title={product.title}
                                             price={product.price}
+                                            onClick={()=> {}}
                                         />
                                     </div>
                                 ))
