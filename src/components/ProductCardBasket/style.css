@@ -1,6 +1,7 @@
 .title-cart{
     text-align: center;
     position: relative;
+    padding: .7rem;
   
   }
   .title-cart::after{
@@ -21,9 +22,11 @@
     max-width: 84%;
   }
   
+ @media (min-width:768px) {
   .right-shop{
     width: 24%;
   }
+ }
   .cart-img{
     width: 60px;
   }

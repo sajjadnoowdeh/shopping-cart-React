@@ -1,3 +1,15 @@
+main{
+  display: flex;
+}
 a{
   text-decoration: none;
+}
+
+@media (max-width:768px) {
+  .left-shop{
+    width: 100%;
+  }
+  .right-shop{
+    width: 100%;
+  }
 }

@@ -1,0 +1,27 @@
+.modal-header span button{
+  background: none;
+}
+.modal-footer {
+  border-top: 0;
+}
+
+
+@media (max-width: 576px) {
+  .img-modal {
+    width: 367px;
+  }
+}
+@media (min-width: 576px) {
+  .img-modal {
+    width: 400px;
+  }
+}
+@media (min-width: 992px) {
+    .modal-lg,
+    .modal-xl {
+      max-width: 1200px;
+    }
+    .img-modal {
+      width: 532px;
+    }
+  }

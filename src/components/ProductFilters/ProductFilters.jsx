@@ -9,7 +9,7 @@ export default function ProductFilters({filters ={size:null,price:null},setFilte
     <div className="filters">
       <div className="product-count">{resultCount} Productds</div>
       <div className="product-order">
-        <label htmlFor="price">Price</label>
+        <label htmlFor="price" className="mr-2">Price</label>
         <select name={'price'} onChange={hundleChange} id="price">
           <option value="">Latest</option>
           <option value="-1">Lowest</option>
@@ -18,7 +18,7 @@ export default function ProductFilters({filters ={size:null,price:null},setFilte
      
       </div>
       <div className="product-filter">
-        <label htmlFor="size">Size</label>
+        <label htmlFor="size"  className="mr-2">Size</label>
         <select name={'size'} onChange={hundleChange} id="size">
           <option value="">All</option>
           <option value="XS">XS</option>

@@ -1,11 +1,13 @@
 import React from "react";
 import "./style.css";
-function ProductCard({srcImg='',title = '',price = 0,onClick}) {
+function ProductCard({srcImg='',title = '',price = 0,onClick,onClickModal}) {
   return (
     <div className="card-product">
       <div className="card-img">
         <img
           src= {srcImg}
+           variant="primary"
+           onClick={onClickModal}
         />
       </div>
       <p className="card-text">
